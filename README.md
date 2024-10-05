@@ -16,7 +16,7 @@
 </p>
 
 ## Описание
-***CrimsonEye - бот-модеартор для дискорд сервера crimson-coalition.ru, made by [salobchyanskiy]()***
+***CrimsonEye - бот-модератор для дискорд сервера crimson-coalition.ru, made by [salobchyanskiy]()***
 
 ## Список функций
 ***Ниже представлены функции которые может выполнять бот:***
