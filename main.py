@@ -91,4 +91,4 @@ async def restart(ctx):
 
 
 
-client.run('MTI5MDc2MDk1MjQ5NjUyNTQ1Ng.GeMLJ3.tncG6DJbGfSRuZYzMuti7tH2S7GQl_dQTy6an0', log_handler=handler)
+client.run('fuck you raider', log_handler=handler)
