@@ -1,3 +1,4 @@
+#Imports / Импортируем всякое
 import os
 import sys
 import discord
@@ -7,6 +8,7 @@ import logging
 import datetime
 import threading
 
+from config import settings
 
 
 
@@ -18,7 +20,7 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 
 
 
-
+# Статус: Включен
 @client.event
 async def on_ready():
     embed=discord.Embed(title="Статус: Включен",
@@ -30,7 +32,7 @@ async def on_ready():
     await channel.send(embed=embed)
     await client.change_presence(activity=activity)
 
-
+# Вызов справки
 @client.event
 async def on_message(message):
     banwords = ['pidor']
@@ -64,7 +66,7 @@ async def on_message(message):
                 await channel.send(embed=embed)
     await client.process_commands(message)
 
-
+# Статус: Выключен
 @client.command()
 async def shutdown(channel):
     embed1=discord.Embed(title="Статус: Выключен",
@@ -76,7 +78,7 @@ async def shutdown(channel):
     await channel.send(embed=embed1)
     await client.close()
 
-
+#Статус: Перезагрузка
 @client.command()
 async def restart(ctx):
     if ctx.channel.id == 1290761574306545706:
