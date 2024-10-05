@@ -93,4 +93,4 @@ async def restart(ctx):
 
 
 
-client.run('fuck you raider', log_handler=handler)
+client.run(settings['token'])
