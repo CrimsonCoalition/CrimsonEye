@@ -33,20 +33,17 @@ async def on_ready():
     await client.change_presence(activity=activity)
 
 @client.event
-async def on_message(message):
-    banwords = ['pidor']
-    channel = client.get_channel(1292227488109301782)
-    client_author = client.get_user(int(1238954471577620482))
-    if client.user in message.mentions:
-        embed = discord.Embed(title="Справка",
-                              color=0x3c2f2f,
-                              timestamp=datetime.datetime.now())
-        embed.set_thumbnail(url='https://i.ibb.co/c8Fgy2j/photo-2024-10-03-19-13-07.jpg')
-        embed.add_field(name="ЯП: ", value="Python", inline=True)
-        embed.add_field(name="Создатель: ", value=f'<@{1238954471577620482}>', inline=True)
-        embed.add_field(name="Github: ", value="[<клик>](https://github.com/CrimsonCoalition/CrimsonEye)", inline=False)
-        await channel.send(embed=embed)
-    await client.process_commands(message)
+async def on_member_join(member):
+    channel = 1292227488109301782
+
+    embed = discord.Embed(
+        title=f'WELCOME, {member.mention}!',
+        color=0x5ffdff
+    )
+    embed.set_author(icon_url=member.avatar_url)
+    embed.set_footer(text=f'Ваш ID: {member.id} • {datetime.datetime.now()}')
+
+    await channel.send(embed=embed)
 
 @client.event
 async def on_message(message):
@@ -63,6 +60,7 @@ async def on_message(message):
         embed.add_field(name="Github: ", value="[<клик>](https://github.com/CrimsonCoalition/CrimsonEye)", inline=False)
         await channel.send(embed=embed)
     await client.process_commands(message)
+
 
 # Вызов справки
 @client.event
