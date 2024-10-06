@@ -44,4 +44,9 @@ git clone https://github.com/CrimsonCoalition/CrimsonEye.git
 cd CrimsonEye
 python3 -m pip install -r requirements.txt
 ```
-2. 
+
+2. Запускаем
+
+```bash
+python3 main.py
+```
