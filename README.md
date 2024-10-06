@@ -36,10 +36,12 @@
 
 ## Начало работы
 
-1. Клонируйте репозиторий:
+1. Клонируйте репозиторий, переходим в папку, устанавливаем зависимости
 
    
 ```bash
-git clone https://github.com/CrimsonCoalition/CrimsonEye/CrimsonEye.git
+git clone https://github.com/CrimsonCoalition/CrimsonEye.git
+cd CrimsonEye
+python3 -m pip install -r requirements.txt
 ```
 2. 
