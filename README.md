@@ -40,6 +40,6 @@
 
    
 ```bash
-https://github.com/CrimsonCoalition/CrimsonEye/
+git clone https://github.com/CrimsonCoalition/CrimsonEye/CrimsonEye.git
 ```
 2. 
