@@ -1,4 +1,4 @@
-#Imports / Импортируем всякое
+#Imports / Импорты
 import os
 import sys
 import discord
@@ -6,9 +6,8 @@ from discord.ext import commands
 from discord.ui import Button, View
 import logging
 import datetime
-import threading
 
-from config import settings
+
 
 
 
@@ -20,7 +19,7 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 
 
 
-# Статус: Включен
+# Сообщение о включении
 @client.event
 async def on_ready():
     embed=discord.Embed(title="Статус: Включен",
@@ -28,7 +27,7 @@ async def on_ready():
                         color=0x33ff55,
                         timestamp=datetime.datetime.now())
     embed.set_thumbnail(url="https://img.icons8.com/?size=256&id=VFaz7MkjAiu0&format=png")
-    channel = client.get_channel(1290761574306545706)
+    channel = client.get_channel(1292227488109301782)
     await channel.send(embed=embed)
     await client.change_presence(activity=activity)
 
@@ -61,23 +60,6 @@ async def on_message(message):
         await channel.send(embed=embed)
     await client.process_commands(message)
 
-
-# Вызов справки
-@client.event
-async def on_message(message):
-    banwords = ['pidor']
-    channel = client.get_channel(1290761574306545706)
-    if client.user in message.mentions:
-        embed = discord.Embed(title="Справка",
-                              color=0x3c2f2f,
-                              timestamp=datetime.datetime.now())
-        embed.set_thumbnail(url="https://img.icons8.com/?size=100&id=rliRb6nC38ip&format=png&color=000000")
-        embed.add_field(name="ЯП: ", value="Python", inline=True)
-        embed.add_field(name="Создатель: ", value="@salø", inline=True)
-        embed.add_field(name="Github: ", value="-", inline=False)
-        await channel.send(embed=embed)
-    await client.process_commands(message)
-
     if message.author.id == 1290760952496525456:
         return
     else:
@@ -96,7 +78,7 @@ async def on_message(message):
                 await channel.send(embed=embed)
     await client.process_commands(message)
 
-# Статус: Выключен
+
 @client.command()
 async def shutdown(channel):
     embed1=discord.Embed(title="Статус: Выключен",
@@ -104,14 +86,14 @@ async def shutdown(channel):
                          color=0xff2a2a,
                          timestamp=datetime.datetime.now())
     embed1.set_thumbnail(url="https://img.icons8.com/?size=256&id=OZuepOQd0omj&format=png")
-    channel = client.get_channel(1290761574306545706)
+    channel = client.get_channel(1292227488109301782)
     await channel.send(embed=embed1)
     await client.close()
 
-#Статус: Перезагрузка
+
 @client.command()
 async def restart(ctx):
-    if ctx.channel.id == 1290761574306545706:
+    if ctx.channel.id == 1292227488109301782:
         embed = discord.Embed(title="Статус: Перезагрузка...",
                               description="В скором времени бот включится и продолжит работать в обычном режиме",
                               color=0x05aab0, timestamp=datetime.datetime.now())
@@ -123,4 +105,4 @@ async def restart(ctx):
 
 
 
-client.run(settings['token'])
+client.run(settings['token']) #fuck you raider
